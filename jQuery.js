@@ -18,6 +18,11 @@ $('#nav').on("click", function () {
             $(this).css('color','red');
         });
 // изменит цвет элемента с id nav, при клике
+
+$('#nav').on("click", function () {
+            $('span', this).css('color','red');
+        });
+// изменит цвет span, который нвходится внутри элемента с id nav, при клике
   
 $('button').on("click", {user:"Test"} ,function (e) {
             $(this).css('color','red');
