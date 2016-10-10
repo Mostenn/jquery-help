@@ -36,7 +36,14 @@ $('button').on("click", {user:"Test"} ,function (e) {
 // изменит цвет элемента с id nav, при клике, 
 // и при этом событии (е) вызовет console.log(e.data.user), 
 // user мы объявили в самой функции
-  
+
+$('.someDiv').on("click", function (e) {
+            $('#modal-div').css("background-color", $(e.target).css("background-color"));
+        });
+// при клике на .someDiv, будет меняться фон #modal-div, на тот что указан в .someDiv...
+// $(e.target) это тот элемент с которым было соверешено событие
+
+
   $('<a/>', {
         text    :   'Ссылка на Яндекс',
         title   :   'Это Яндекс',
