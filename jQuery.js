@@ -61,4 +61,9 @@ $('.someDiv').on("click", function (e) {
         }                             
     }).appendTo('#parentDiv');
 // внутри элемента parentDiv, создаёт ссылку на яндекс
-  
+
+$("#book").animate({
+    opacity: 0.25,
+    left: "+=50"
+  }, 5000);
+ // анимирует #book, меняет свойства его css с заданной скоростью
