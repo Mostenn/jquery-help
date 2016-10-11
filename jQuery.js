@@ -78,11 +78,11 @@ $("#book").animate({
 
 <script>
     $('#mail_send').submit(function () {
-        var str = $(this).serialize(); // тут получаем сериализованую строку полей форма, которую php получит как массив
+        var str = $(this).serialize(); // тут получаем сериализованую строку значений полей формы
         $.ajax({
             type: "POST", // метод
             url: "mail.php", // путь
-            data: str, // передаём в php значения формы в виде массива $_POST
+            data: str, // передаём в php сериализованую строку, которую он получет виде массива $_POST
             success: function (html) { // функция в случе успеха
                 $('#content').html(html); // записываем в #content, то что нам вернул файл mail.php
             }
