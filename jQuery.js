@@ -67,3 +67,27 @@ $("#book").animate({
     left: "+=50"
   }, 5000);
  // анимирует #book, меняет свойства его css с заданной скоростью
+
+/*-------------Ajax---------------------------------------*/
+
+<p id="content"></p>
+<form id="mail_send">
+    <input type="email" name="mail">
+    <button type="submit">Send</button>
+</form>
+
+<script>
+    $('#mail_send').submit(function () {
+        var str = $(this).serialize(); // тут получаем сериализованую строку полей форма
+        $.ajax({
+            type: "POST", // метод
+            url: "mail.php", // путь
+            data: str, // передаём в php значения формы в виде массива $_POST
+            success: function (html) { // функция в случе успеха
+                $('#content').html(html); // записываем в #content, то что нам вернул файл mail.php
+            }
+        });
+        return false; // для того что бы остановить выполнение
+    });
+</script>
+    
