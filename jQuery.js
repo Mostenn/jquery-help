@@ -90,4 +90,21 @@ $("#book").animate({
         return false; // для того что бы остановить выполнение
     });
 </script>
+
+/*--------------------Json переменные в Ajax--------------------------------*/
+// cars.php
+<?php
+$cars = ['audi','bmw','lexus'=>['rx', 'gx']];
+print json_encode($cars); // ковертируем в JSON формат
+?>
+// js
+$('#cars').click(function () {
+        $.ajax({
+            url: "cars.php",
+            success: function (html) {
+                var res = $.parseJSON(html); // конвертируем плученый JSON, в javascript-объект
+                console.dir(res); // выводим в консоль
+            }
+        });
+    });
     
