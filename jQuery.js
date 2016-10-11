@@ -91,7 +91,7 @@ $("#book").animate({
     });
 </script>
 
-/*--------------------Json переменные в Ajax--------------------------------*/
+/*--------------------Передаём данные с PHP в JS с помощью Ajax--------------------------------*/
 // cars.php
 <?php
 $cars = ['audi','bmw','lexus'=>['rx', 'gx']];
@@ -107,4 +107,23 @@ $('#cars').click(function () {
             }
         });
     });
-    
+
+
+/*--------------------Передаём данные с JS в PHP с помощью Ajax--------------------------------*/
+// cars.php
+<?php
+print_r($_POST['cars']);
+?>
+   
+var cars = ['toyota', 'nissan', 'honda']; // js массив
+
+    $('#cars').click(function () {
+        $.ajax({
+            url: "php/hello.php",
+            type: "POST",
+            data: {cars: cars}, // передаём массив cars, в PHP получем его в виде $_POST['cars']
+            success: function (html) {
+                console.log(html); // выводим в консоль
+            }
+        });
+    });
