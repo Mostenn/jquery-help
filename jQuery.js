@@ -38,6 +38,12 @@ $('#new').find('ul') // выберет все ul которые находятс
 
 $('#new').closest('div') // выберет ближайший к #new эллемент div
 
+// события
+
+$(window).resize(function(){ // при изминении окна браузера
+   console.log(window.innerHeight, window.innerWidth); // выводим в консовь высоту и ширину окна 
+});
+
 $('#nav').on("click", function () {
             $(this).css('color','red');
         });
