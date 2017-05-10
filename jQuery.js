@@ -105,6 +105,9 @@ $('#modal').animate({height: 400}, {duration: 1000, queue: false})
 // анимирует элемент #modal, все анимации происходят одновременно(queue: false)
 // .animate(css, дополнительные параметры)
 
+$(this).animate({width:300},{duration: 1000, specialEasing:{width:'swing'}});
+// параметр specialEasing изменяет метод анимации в данном случае (swing)
+
 /*-------------Ajax---------------------------------------*/
 
 <p id="content"></p>
