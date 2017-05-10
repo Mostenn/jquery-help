@@ -89,7 +89,7 @@ $('.list').wrap('<span></span>') // обернёт в спан все эллем
         }                             
     }).appendTo('#parentDiv');
 // создаст ссылку со всеми атрибутами что мы задали в том числе и с оброботчиком события click, и вставит её в #parentDiv
-
+// кроме appendTo() есть ещё prependTo(), after(), before и тд.
 
 
 $("#book").animate({
