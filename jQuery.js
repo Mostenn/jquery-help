@@ -91,12 +91,19 @@ $('.list').wrap('<span></span>') // обернёт в спан все эллем
 // создаст ссылку со всеми атрибутами что мы задали в том числе и с оброботчиком события click, и вставит её в #parentDiv
 // кроме appendTo() есть ещё prependTo(), after(), before и тд.
 
-
+// Анимация
 $("#book").animate({
     opacity: 0.25,
     left: "+=50"
   }, 5000);
  // анимирует #book, меняет свойства его css с заданной скоростью
+
+$('#modal').animate({height: 400}, {duration: 1000, queue: false})
+        .animate({width: 400}, {duration: 1000, queue: false})
+        .animate({top:(window.innerHeight - 400) / 2}, {duration: 1000, queue: false})
+        .animate({left:(window.innerWidth - 400) / 2}, {duration: 1000, queue: false});
+// анимирует элемент #modal, все анимации происходят одновременно(queue: false)
+// .animate(css, дополнительные параметры)
 
 /*-------------Ajax---------------------------------------*/
 
